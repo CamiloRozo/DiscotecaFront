@@ -5,13 +5,15 @@ import {CoreModule} from "../../core/core.module";
 import {UsuarioService} from "./shared/service/usuario.service";
 import { VerificarUsuarioComponent } from './components/verificar-usuario/verificar-usuario.component';
 import {FormsModule} from "@angular/forms";
+import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
 
 
 
 @NgModule({
   declarations: [
     ListarUsuariosComponent,
-    VerificarUsuarioComponent
+    VerificarUsuarioComponent,
+    RegistrarUsuarioComponent
   ],
     imports: [
         CommonModule,

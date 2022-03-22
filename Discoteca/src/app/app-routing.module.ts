@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {VerificarUsuarioComponent} from "./feature/usuario/components/verificar-usuario/verificar-usuario.component";
 import {MenuComponent} from "./shared/components/menu/menu.component";
+import {RegistrarUsuarioComponent} from "./feature/usuario/components/registrar-usuario/registrar-usuario.component";
 
 const routes: Routes = [
   { path: 'login', component: VerificarUsuarioComponent },
   { path: 'menu', component: MenuComponent },
+  { path: 'registro', component: RegistrarUsuarioComponent },
   { path: '**', component: VerificarUsuarioComponent },
 ];
 

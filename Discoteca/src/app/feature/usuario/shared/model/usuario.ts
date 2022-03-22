@@ -1,16 +1,18 @@
+import {DatePipe} from "@angular/common";
+
 export class Usuario {
-  id: number;
+  id: number | undefined;
   nombre: string;
   clave: number;
   fechaNacimiento: Date;
-  fechaCreacion: Date;
+  fecha: DatePipe;
 
-  constructor(id: number, nombre: string, clave: number, fechaNacimiento: Date, fechaCreacion: Date) {
+  constructor(nombre: string, clave: number, fechaNacimiento: Date, fecha: DatePipe, id?: number) {
     this.id = id;
     this.nombre = nombre;
     this.clave = clave;
     this.fechaNacimiento = fechaNacimiento;
-    this.fechaCreacion = fechaCreacion;
+    this.fecha = fecha;
   }
 
 }
