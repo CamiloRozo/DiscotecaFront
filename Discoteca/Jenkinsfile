@@ -51,7 +51,7 @@ stage('Install') {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'cd Discoteca && npm run test'
+        sh 'cd Discoteca && npm run test -- --watch=false --browsers ChromeHeadless'
       }
     }
 
