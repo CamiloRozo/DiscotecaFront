@@ -35,17 +35,23 @@ pipeline {
       }
     }
 
-stage('NPM Install') {
+stage('Install') {
       steps {
         echo "------------>Installing<------------"
         sh 'cd Discoteca && npm install'
       }
     }
 
+            stage('Build') {
+                steps {
+                    sh 'cd Discoteca && npm run build'
+                }
+            }
+
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'cd Discoteca && npm run test -- --watch=false --browsers ChromeHeadless'
+        sh 'cd Discoteca && npm run test'
       }
     }
 
