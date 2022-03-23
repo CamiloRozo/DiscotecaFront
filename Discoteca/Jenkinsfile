@@ -45,7 +45,7 @@ stage('NPM Install') {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh './Discoteca'
+        sh 'cd /Discoteca'
         sh 'npm run test -- --watch=false --browsers ChromeHeadless'
       }
     }
