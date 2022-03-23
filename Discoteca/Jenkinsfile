@@ -63,12 +63,6 @@ stage('Install') {
         sonarPathProperties:'./sonar-project.properties')
       }
     }
-
-    stage('Build') {
-      steps {
-        echo "------------>Build<------------"
-      }
-    }
   }
 
   post {
