@@ -7,6 +7,7 @@ import {CoreModule} from "./core/core.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UsuarioModule} from "./feature/usuario/usuario.module";
 import {SharedModule} from "./shared/shared.module";
+import {ReservaModule} from "./feature/reserva/reserva.module";
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {SharedModule} from "./shared/shared.module";
     CoreModule,
     HttpClientModule,
     UsuarioModule,
+    ReservaModule,
     SharedModule
   ],
   providers: [],

@@ -46,7 +46,7 @@ export class VerificarUsuarioComponent implements OnInit {
     let response = await this.usuarioService.consultarCredenciales(this.usuarioLogin).toPromise();
     this.idUser = response.valor as { valor: number };
     sessionStorage.setItem('id', this.idUser);
-    console.log('el id del usuario es ' + sessionStorage.getItem('id'));
+    sessionStorage.setItem('nombre', this.usuarioLogin.nombre);
     await this.router.navigate(['menu']);
   }
 

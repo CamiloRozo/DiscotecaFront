@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UsuarioService} from "../../shared/service/usuario.service";
 import {Usuario} from "../../shared/model/usuario";
 import {DatePipe} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -10,7 +11,7 @@ import {DatePipe} from "@angular/common";
 })
 export class RegistrarUsuarioComponent implements OnInit {
   usuario: Usuario;
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
 
   }
 
@@ -22,8 +23,9 @@ export class RegistrarUsuarioComponent implements OnInit {
       this.setUser(data);
      let idUser = await this.usuarioService.registrarUsuario(this.usuario).toPromise();
       sessionStorage.setItem('id', idUser.valor);
+      sessionStorage.setItem('nombre', this.usuario.nombre);
       console.log('el id asignado es '+ idUser.valor);
-
+      await this.router.navigate(['menu']);
     } catch (e : any) {
       console.log(' something went wrong trying to register a user');
     }

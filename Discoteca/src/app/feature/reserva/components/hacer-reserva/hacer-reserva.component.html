@@ -1,0 +1,67 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="alert alert-success" role="alert" [hidden]=modal>
+  <h4 class="alert-heading">Felicitaciones!</h4>
+  <p>No olvides presentarte con 10 minutos de anticipacion {{nombre}}!!!</p>
+  <hr>
+  <p class="mb-0">Recuerda que segun el dia de tu reserva puedes acceder a descuentos unicos.</p>
+</div>
+
+<form #userRegister= "ngForm" (ngSubmit) = "onClickSubmit(userRegister.value)" >
+
+
+<div class="container contact" >
+  <div class="row">
+    <div class="col-md-3">
+      <div class="contact-info">
+        <img src="https://static.thenounproject.com/png/98497-200.png" alt="image"/>
+        <h2>Juvetonik</h2>
+        <h4>Haz tu reserva sin complicaciones!</h4>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="contact-form">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="name">Nombre:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name"  [placeholder]="nombre" name="fname" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="id">ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="id" [placeholder]="id" name="lname" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="email">Fecha evento</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" [placeholder]="fechaEvento" name="email" disabled ngModel>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Categoria</label>
+          <select id="inputState" name="categoria" class="form-control" ngModel>
+            <option selected>VIP</option>
+            <option>General</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="row">
+          <div class="col-sm-offset-4 col-sm-6">
+            <button type="submit" class="btn btn-default">Reservar</button>
+          </div>
+          <div class="col-sm-offset-4 col-sm-6">
+            <button type="button" (click)="goBack()" type="button" class="btn btn-default" >Atras</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
