@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
-import {CoreModule} from "../../core/core.module";
-import {UsuarioService} from "./shared/service/usuario.service";
+import {CoreModule} from '../../core/core.module';
+import {UsuarioService} from './shared/service/usuario.service';
 import { VerificarUsuarioComponent } from './components/verificar-usuario/verificar-usuario.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
 
 

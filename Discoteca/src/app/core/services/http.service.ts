@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 
 
 export interface Options {
-  headers?: HttpHeaders
+  headers?: HttpHeaders;
 }
 @Injectable({
   providedIn: 'root'
@@ -19,30 +19,30 @@ export class HttpService {
   }
 
   get<T>(url: string): Observable<T> {
-    let options = this.createOptionsHeaders();
+    const options = this.createOptionsHeaders();
     return this.httpClient.get<T>(url, options);
   }
 
   put<T, R>(url: string, body: T): Observable<R> {
-    let options = this.createOptionsHeaders();
+    const options = this.createOptionsHeaders();
     return this.httpClient.put<R>(url, body, options);
   }
 
   post<T, R>(url: string, body: T): Observable<R> {
-    let options = this.createOptionsHeaders();
+    const options = this.createOptionsHeaders();
     return this.httpClient.post<R>(url, body, options);
   }
 
   delete<T>(url: string): Observable<T> {
-    let options = this.createOptionsHeaders();
+    const options = this.createOptionsHeaders();
     return this.httpClient.delete<T>(url, options);
   }
 
   private createOptionsHeaders(): Options {
     return {
       headers: new HttpHeaders().set('Type-content', 'aplication/json')
-    }
-  };
+    };
+  }
 
 }
 

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListarUsuariosComponent } from './listar-usuarios.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 
 describe('ListarUsuariosComponent', () => {
   let component: ListarUsuariosComponent;

@@ -15,8 +15,9 @@ export class HacerReservaComponent implements OnInit {
   public nombre = sessionStorage.getItem('nombre');
   public id = sessionStorage.getItem('id');
   public fechaEvento: string;
-  public modal:boolean = true;
-  constructor(private reservaService: ReservaService, private router:Router) {
+  public modal = true;
+
+  constructor(private reservaService: ReservaService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -25,27 +26,27 @@ export class HacerReservaComponent implements OnInit {
 
   public async onClickSubmit(data: any): Promise<void> {
     try {
-      let reserva = this.setData(data);
+      const reserva = this.setData(data);
       await this.reservaService.hacerReserva(reserva).toPromise();
       this.modal = false;
-      setTimeout(() =>{
+      setTimeout(() => {
         this.modal = true;
-      },10000);
+      }, 10000);
     } catch (e) {
     }
 
   }
 
   private ajustarFechas(): any {
-    let date = new Date();
+    const date = new Date();
     const diaActual = date.getDay();
     const diaFinal = 7 - diaActual;
     date.setDate(date.getDate() + diaFinal);
-    let datePipeEn = new DatePipe('en-US')
+    const datePipeEn = new DatePipe('en-US');
     return datePipeEn.transform(date, 'yyyy-MM-dd');
   }
 
-  private setData(data : any) : Reserva {
+  private setData(data: any): Reserva {
     this.reserva = {
       nombre: this.nombre,
       categoria: data.categoria,
@@ -58,7 +59,7 @@ export class HacerReservaComponent implements OnInit {
     return this.reserva;
   }
 
-  public async goBack (): Promise<void> {
+  public async goBack(): Promise<void> {
     await this.router.navigate(['menu']);
   }
 

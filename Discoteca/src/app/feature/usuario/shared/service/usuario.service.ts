@@ -4,24 +4,25 @@ import {Usuario} from '../model/usuario';
 import {Observable} from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any',
+
 })
 export class UsuarioService {
-  constructor(private HttpService: HttpService) {
+  constructor(private httpService: HttpService) {
   }
 
   private url = 'http://localhost:8083/discoteca/usuarios';
 
   public consultar(): Observable<Usuario[]> {
-    return this.HttpService.get<Usuario[]>(this.url);
+    return this.httpService.get<Usuario[]>(this.url);
   }
 
-  public  consultarCredenciales(credenciales: Object): any {
-    return this.HttpService.put(this.url, credenciales);
+  public consultarCredenciales(credenciales: object): any {
+    return this.httpService.put(this.url, credenciales);
   }
 
-  public registrarUsuario (usuario: Usuario): any {
-    return this.HttpService.post<Usuario, number>(this.url, usuario);
+  public registrarUsuario(usuario: Usuario): any {
+    return this.httpService.post<Usuario, number>(this.url, usuario);
   }
 
 

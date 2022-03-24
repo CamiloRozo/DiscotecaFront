@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class VerificarUsuarioComponent implements OnInit {
 
-  private usuarioLogin: UsuarioLogin
+  private usuarioLogin: UsuarioLogin;
   private idUser: any;
 
   constructor(private usuarioService: UsuarioService, private router: Router) {
@@ -25,7 +25,7 @@ export class VerificarUsuarioComponent implements OnInit {
       this.usuarioLogin = {
         nombre: data.name,
         clave: data.password
-      }
+      };
       if (this.isValidLength(this.usuarioLogin.clave)) {
         await this.isValidUser();
       } else {
@@ -42,8 +42,8 @@ export class VerificarUsuarioComponent implements OnInit {
     return (password.length >= 4);
   }
 
-  async isValidUser():Promise<void> {
-    let response = await this.usuarioService.consultarCredenciales(this.usuarioLogin).toPromise();
+  async isValidUser(): Promise<void> {
+    const response = await this.usuarioService.consultarCredenciales(this.usuarioLogin).toPromise();
     this.idUser = response.valor as { valor: number };
     sessionStorage.setItem('id', this.idUser);
     sessionStorage.setItem('nombre', this.usuarioLogin.nombre);

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ReservaService } from './reserva.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 
 describe('ReservaService', () => {
   let service: ReservaService;

@@ -7,7 +7,7 @@ import {ListarReservaComponent} from './feature/reserva/components/listar-reserv
 import {HacerReservaComponent} from './feature/reserva/components/hacer-reserva/hacer-reserva.component';
 import {
   ListarReservaUsuarioComponent
-} from "./feature/reserva/components/listar-reserva-usuario/listar-reserva-usuario.component";
+} from './feature/reserva/components/listar-reserva-usuario/listar-reserva-usuario.component';
 
 const routes: Routes = [
   { path: 'login', component: VerificarUsuarioComponent },

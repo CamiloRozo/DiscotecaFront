@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ReservaService} from '../../shared/service/reserva.service';
 
 @Component({
@@ -6,14 +6,12 @@ import {ReservaService} from '../../shared/service/reserva.service';
   templateUrl: './eliminar-reserva.component.html',
   styleUrls: ['./eliminar-reserva.component.sass']
 })
-export class EliminarReservaComponent implements OnInit {
+export class EliminarReservaComponent {
   @Input() idReserva: any;
 
   constructor(private reservaService: ReservaService) {
   }
 
-  ngOnInit(): void {
-  }
 
   async onClick(): Promise<void> {
     try {
