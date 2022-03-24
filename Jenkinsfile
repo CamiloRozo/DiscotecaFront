@@ -44,7 +44,7 @@ stage('Install') {
 
             stage('Build') {
                 steps {
-                    sh 'cd Discoteca && npm run build'
+                    sh 'npm run build'
                 }
             }
 
