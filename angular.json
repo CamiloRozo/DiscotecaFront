@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Discoteca": {
+    "app-base": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {  "style": "sass"}
@@ -15,7 +15,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Discoteca",
+            "outputPath": "dist/app-base",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,19 +65,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Discoteca:build"
+            "browserTarget": "app-base:build"
 
           },
           "configurations": {
             "production": {
-              "browserTarget": "Discoteca:build:production"
+              "browserTarget": "app-base:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Discoteca:build"
+            "browserTarget": "app-base:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Discoteca:serve"
+            "devServerTarget": "app-base:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Discoteca:serve:production"
+              "devServerTarget": "app-base:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Discoteca"
+  "defaultProject": "app-base"
 }
