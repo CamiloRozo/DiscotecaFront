@@ -47,7 +47,7 @@ export class VerificarUsuarioComponent implements OnInit {
     this.idUser = response.valor as { valor: number };
     sessionStorage.setItem('id', this.idUser);
     sessionStorage.setItem('nombre', this.usuarioLogin.nombre);
-    await this.router.navigate(['menu']);
+    this.goToRegisterComponent();
   }
 
   goToRegisterComponent(): void {
