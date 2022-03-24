@@ -19,4 +19,14 @@ export class ReservaService {
   public hacerReserva(reserva: Reserva): any {
     return this.httpService.post<Reserva,number>(this.url,reserva);
   }
+
+  public listarReservaUsuario(reserva: any): any {
+    return this.httpService.post(`${this.url}/usuario`,reserva);
+  }
+
+  public eliminarReserva (id : number): any {
+    console.log('la reserva es ' + id);
+    console.log('url ' + `${this.url}/${id}`);
+    return this.httpService.delete(`${this.url}/${id}`);
+  }
 }

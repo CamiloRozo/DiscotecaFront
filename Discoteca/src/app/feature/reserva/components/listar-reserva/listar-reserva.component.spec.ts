@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListarReservaComponent } from './listar-reserva.component';
+import {HttpClientModule} from "@angular/common/http";
 
 describe('ListarReservaComponent', () => {
   let component: ListarReservaComponent;
@@ -8,6 +9,7 @@ describe('ListarReservaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ ListarReservaComponent ]
     })
     .compileComponents();
