@@ -1,8 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {ReservaService} from "../../shared/service/reserva.service";
-import {Reserva} from "../../shared/model/reserva";
-import {DatePipe} from "@angular/common";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ReservaService} from '../../shared/service/reserva.service';
+import {Reserva} from '../../shared/model/reserva';
+import {DatePipe} from '@angular/common';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class HacerReservaComponent implements OnInit {
   public async onClickSubmit(data: any): Promise<void> {
     try {
       let reserva = this.setData(data);
-      const idReserva = await this.reservaService.hacerReserva(reserva).toPromise();
+      await this.reservaService.hacerReserva(reserva).toPromise();
       this.modal = false;
       setTimeout(() =>{
         this.modal = true;
@@ -58,8 +58,8 @@ export class HacerReservaComponent implements OnInit {
     return this.reserva;
   }
 
-  public goBack (): void {
-    this.router.navigate(['menu']);
+  public async goBack (): Promise<void> {
+    await this.router.navigate(['menu']);
   }
 
 

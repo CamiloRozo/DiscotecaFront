@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpService} from "../../../../core/services/http.service";
-import {Observable} from "rxjs";
-import {Reserva} from "../model/reserva";
+import {HttpService} from '../../../../core/services/http.service';
+import {Observable} from 'rxjs';
+import {Reserva} from '../model/reserva';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,6 @@ export class ReservaService {
   }
 
   public eliminarReserva (id : number): any {
-    console.log('la reserva es ' + id);
-    console.log('url ' + `${this.url}/${id}`);
     return this.httpService.delete(`${this.url}/${id}`);
   }
 }

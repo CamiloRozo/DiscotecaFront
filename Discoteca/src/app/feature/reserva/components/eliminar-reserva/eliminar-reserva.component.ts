@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ReservaService} from "../../shared/service/reserva.service";
+import {ReservaService} from '../../shared/service/reserva.service';
 
 @Component({
   selector: 'app-eliminar-reserva',
@@ -20,7 +20,7 @@ export class EliminarReservaComponent implements OnInit {
       await this.reservaService.eliminarReserva(this.idReserva).toPromise();
       location.reload();
     } catch (e) {
-      console.log('something went wrong deleting a reserve')
+      alert('somthing went wrong');
     }
   }
 

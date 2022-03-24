@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {UsuarioService} from "../../shared/service/usuario.service";
-import {UsuarioLogin} from "../../shared/model/usuarioLogin";
-import {Router} from "@angular/router";
+import {UsuarioService} from '../../shared/service/usuario.service';
+import {UsuarioLogin} from '../../shared/model/usuarioLogin';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-verificar-usuario',

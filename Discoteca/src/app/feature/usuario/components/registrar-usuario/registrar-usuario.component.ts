@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {UsuarioService} from "../../shared/service/usuario.service";
-import {Usuario} from "../../shared/model/usuario";
-import {DatePipe} from "@angular/common";
-import {Router} from "@angular/router";
+import {UsuarioService} from '../../shared/service/usuario.service';
+import {Usuario} from '../../shared/model/usuario';
+import {DatePipe} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registrar-usuario',
