@@ -18,7 +18,7 @@ export class EliminarReservaComponent {
       await this.reservaService.eliminarReserva(this.idReserva).toPromise();
       location.reload();
     } catch (e) {
-      alert('somthing went wrong');
+      alert('something went wrong');
     }
   }
 

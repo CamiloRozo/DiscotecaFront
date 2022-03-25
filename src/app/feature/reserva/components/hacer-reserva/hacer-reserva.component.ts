@@ -27,12 +27,13 @@ export class HacerReservaComponent implements OnInit {
   public async onClickSubmit(data: any): Promise<void> {
     try {
       const reserva = this.setData(data);
-      await this.reservaService.hacerReserva(reserva).toPromise();
+      const response = await this.reservaService.hacerReserva(reserva).toPromise();
       this.modal = false;
       setTimeout(() => {
         this.modal = true;
       }, 10000);
     } catch (e) {
+      alert('something went wrong with the reserve');
     }
 
   }
