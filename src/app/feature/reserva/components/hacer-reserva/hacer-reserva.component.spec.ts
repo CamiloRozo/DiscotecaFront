@@ -7,7 +7,6 @@ import {FormsModule} from '@angular/forms';
 import {ReservaService} from '../../shared/service/reserva.service';
 import {of} from 'rxjs';
 import {Router} from '@angular/router';
-import {RegistrarUsuarioComponent} from '../../../usuario/components/registrar-usuario/registrar-usuario.component';
 
 
 describe('HacerReservaComponent', () => {
@@ -56,7 +55,7 @@ describe('HacerReservaComponent', () => {
     spyOn(window, 'alert');
     component.onClickSubmit(invalidReserve);
     expect(window.alert).toHaveBeenCalledOnceWith('something went wrong with the reserve');
-  });
+  }, 20000);
 
   it('successful reservation', () => {
     httpClientSpy.post.and.returnValue(of({valor: '3'}));

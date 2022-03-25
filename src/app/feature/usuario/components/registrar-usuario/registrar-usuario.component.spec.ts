@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 
 const usuarioServiceSpy = jasmine.createSpyObj('UsuarioService', ['registrarUsuario']);
 const routerServiceSpy = jasmine.createSpyObj('Router', ['navigate']);
+
 describe('RegistrarUsuarioComponent', () => {
   let component: RegistrarUsuarioComponent;
   let fixture: ComponentFixture<RegistrarUsuarioComponent>;
@@ -38,29 +39,25 @@ describe('RegistrarUsuarioComponent', () => {
       });
   });
 
-  afterEach(() => {
-    fixture.destroy();
-  });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-
-
-  it('it should register a user', fakeAsync(() => {
-    usuarioServiceSpy.registrarUsuario.and.returnValue(of({valor: '2'}));
-    component.onClickSubmit(validUserMock);
-    tick();
-    expect(routerServiceSpy.navigate).toHaveBeenCalledWith(['menu']);
-  }));
-
-  it('it generate error  registering a user', fakeAsync(() => {
+  it('it generate error  registering a user', (async () => {
     spyOn(window, 'alert');
-    component.onClickSubmit(invalidUserMock);
-    tick();
+    await component.onClickSubmit(invalidUserMock);
     expect(window.alert).toHaveBeenCalledOnceWith('something went wrong trying to register a user');
   }));
 
+  it('it should register a user', async () => {
+    usuarioServiceSpy.registrarUsuario.and.returnValue(of({valor: '2'}));
+    await component.onClickSubmit(validUserMock);
+    expect(routerServiceSpy.navigate).toHaveBeenCalledWith(['menu']);
+  }
+);
+
+
+
 
 });
+
