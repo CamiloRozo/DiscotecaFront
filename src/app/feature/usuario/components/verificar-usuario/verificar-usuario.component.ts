@@ -51,7 +51,7 @@ export class VerificarUsuarioComponent implements OnInit {
   }
 
   goToRegisterComponent(): void {
-    this.router.navigate(['menu']);
+    this.router.navigate(['registro']);
   }
 
 }
