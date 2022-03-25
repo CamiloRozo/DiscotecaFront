@@ -1,4 +1,4 @@
-import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { HacerReservaComponent } from './hacer-reserva.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';

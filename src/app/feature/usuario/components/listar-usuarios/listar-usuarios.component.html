@@ -1,6 +1,6 @@
 <div>
   <h1 style="color: darkred"> TODAS LAS RESERVAS</h1>
-  <ul *ngFor="let usuario of listaUsuarios">
+  <ul *ngFor="let usuario of listaUsuarios | async">
     <li> id:{{usuario.id}} </li>
     <li> nombre:{{usuario.nombre}} </li>
     <li> clave:{{usuario.clave}} </li>
@@ -10,6 +10,6 @@
 </div>
 <div>
   <h1 style="color: blue"> RESERVAS POR USUARIO</h1>
-  <ul *ngFor="let reservas of listaUsuarios">
+  <ul *ngFor="let reservas of listaUsuarios | async">
   </ul>
 </div>

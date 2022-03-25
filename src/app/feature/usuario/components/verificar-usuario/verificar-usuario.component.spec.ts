@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {UsuarioService} from '../../shared/service/usuario.service';
 import {Router} from '@angular/router';
 import { of} from 'rxjs';
+import {UsuarioLogin} from '../../shared/model/usuarioLogin';
 
 describe('VerificarUsuarioComponent', () => {
   let component: VerificarUsuarioComponent;

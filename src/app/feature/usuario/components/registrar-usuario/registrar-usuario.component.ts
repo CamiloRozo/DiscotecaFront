@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class RegistrarUsuarioComponent {
   usuario: Usuario;
 
-  private static getDate(): any {
+  public static getDate(): any {
     const datePipeEn = new DatePipe('en-US');
     return datePipeEn.transform(new Date(), 'yyyy-MM-dd hh:mm:ss');
   }
