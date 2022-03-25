@@ -37,6 +37,7 @@ describe('RegistrarUsuarioComponent', () => {
         fixture.detectChanges();
       });
   });
+
   afterEach(() => {
     fixture.destroy();
   });
@@ -45,6 +46,8 @@ describe('RegistrarUsuarioComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
+
   it('it should register a user', fakeAsync(() => {
     usuarioServiceSpy.registrarUsuario.and.returnValue(of({valor: '2'}));
     component.onClickSubmit(validUserMock);
@@ -52,9 +55,12 @@ describe('RegistrarUsuarioComponent', () => {
     expect(routerServiceSpy.navigate).toHaveBeenCalledWith(['menu']);
   }));
 
-  it('it generate error  registering a user', fakeAsync( () => {
+  it('it generate error  registering a user', fakeAsync(() => {
     spyOn(window, 'alert');
     component.onClickSubmit(invalidUserMock);
+    tick();
     expect(window.alert).toHaveBeenCalledOnceWith('something went wrong trying to register a user');
   }));
+
+
 });
