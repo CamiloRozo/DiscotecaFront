@@ -34,11 +34,12 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/discoteca'),
+      dir: require('path').join(__dirname, 'reports/coverage/discoteca'),
       subdir: '.',
       reporters: [
         {type: 'html'},
-        {type: 'text-summary'}
+        {type: 'text-summary'},
+        {type: 'lcovonly'}
       ]
     },
     reporters: ['progress', 'kjhtml', 'junit'],
