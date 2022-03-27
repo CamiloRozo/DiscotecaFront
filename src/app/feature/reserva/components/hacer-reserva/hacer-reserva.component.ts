@@ -32,7 +32,7 @@ export class HacerReservaComponent implements OnInit {
       setTimeout(() => {
         this.modal = true;
       }, 10000);
-    } catch (e) {
+    } catch (error) {
       alert('something went wrong with the reserve');
     }
 
