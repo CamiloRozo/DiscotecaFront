@@ -7,7 +7,7 @@ import {ReservaService} from '../../shared/service/reserva.service';
   styleUrls: ['./eliminar-reserva.component.sass']
 })
 export class EliminarReservaComponent {
-  @Input() idReserva: any;
+  @Input() idReserva: number;
 
   constructor(private reservaService: ReservaService) {
   }

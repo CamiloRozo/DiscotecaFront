@@ -9,7 +9,6 @@ import { RegistrarUsuarioComponent } from './components/registrar-usuario/regist
 import { UsuarioRoutingModule } from './usuario-routing.module';
 
 
-console.warn('cargo el modulo');
 @NgModule({
   declarations: [
     ListarUsuariosComponent,
