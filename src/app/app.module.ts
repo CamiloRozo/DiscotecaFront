@@ -5,9 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
-import {UsuarioModule} from './feature/usuario/usuario.module';
-import {SharedModule} from './shared/shared.module';
-import {ReservaModule} from './feature/reserva/reserva.module';
 
 
 @NgModule({
@@ -18,10 +15,7 @@ import {ReservaModule} from './feature/reserva/reserva.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    HttpClientModule,
-    UsuarioModule,
-    ReservaModule,
-    SharedModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,7 +11,7 @@ export class UsuarioService {
   constructor(private httpService: HttpService) {
   }
 
-  private url = 'http://localhost:8083/discoteca/usuarios';
+  private url = '/discoteca/usuarios';
 
   public consultar(): Observable<Usuario[]> {
     return this.httpService.get<Usuario[]>(this.url);

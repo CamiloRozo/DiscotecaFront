@@ -11,7 +11,7 @@ var HtmlReporter = require('protractor-beautiful-reporter');
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
-    './src/**/*.e2e-spec.ts'
+    './src/**/*.e2e-spec.ts','./src/**/*.e-spec.ts'
   ],
   capabilities: {
     'browserName': 'chrome'
@@ -32,6 +32,6 @@ exports.config = {
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'tmp/screenshots'
    }).getJasmine2Reporter());
-    
+
   }
 };

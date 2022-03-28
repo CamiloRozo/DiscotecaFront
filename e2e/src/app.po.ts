@@ -2,7 +2,7 @@ import {browser, by, element} from 'protractor';
 
 export class AppPage {
   navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+    return browser.get(browser.baseUrl + 'usuario/login') as Promise<any>;
   }
 
   navigateToMenu() {
@@ -10,15 +10,15 @@ export class AppPage {
   }
 
   navigateToListarReservas() {
-    return browser.get(browser.baseUrl + '/listar-reservas') as Promise<any>;
+    return browser.get(browser.baseUrl + 'reserva/listar-reservas') as Promise<any>;
   }
 
   navigateToListarReservasUsuario() {
-    return browser.get(browser.baseUrl + '/reserva-usuario') as Promise<any>;
+    return browser.get(browser.baseUrl + 'reserva/reserva-usuario') as Promise<any>;
   }
 
   navigateToReservar() {
-    return browser.get(browser.baseUrl + '/reservar') as Promise<any>;
+    return browser.get(browser.baseUrl + 'reserva/reservar') as Promise<any>;
   }
 
   getTitleText() {

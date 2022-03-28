@@ -7,6 +7,7 @@ import { ListarReservaUsuarioComponent } from './components/listar-reserva-usuar
 import { EliminarReservaComponent } from './components/eliminar-reserva/eliminar-reserva.component';
 import {RouterModule} from '@angular/router';
 import {ReservaService} from './shared/service/reserva.service';
+import {ReservaRoutingModule} from './reserva-routing.module';
 
 
 
@@ -20,7 +21,8 @@ import {ReservaService} from './shared/service/reserva.service';
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        ReservaRoutingModule
     ],
   providers: [ReservaService]
 })

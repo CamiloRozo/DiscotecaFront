@@ -6,9 +6,10 @@ import {UsuarioService} from './shared/service/usuario.service';
 import { VerificarUsuarioComponent } from './components/verificar-usuario/verificar-usuario.component';
 import {FormsModule} from '@angular/forms';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
+import { UsuarioRoutingModule } from './usuario-routing.module';
 
 
-
+console.warn('cargo el modulo');
 @NgModule({
   declarations: [
     ListarUsuariosComponent,
@@ -18,7 +19,8 @@ import { RegistrarUsuarioComponent } from './components/registrar-usuario/regist
     imports: [
         CommonModule,
         CoreModule,
-        FormsModule
+        FormsModule,
+        UsuarioRoutingModule
     ],
     exports: [
         ListarUsuariosComponent,

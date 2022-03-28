@@ -11,7 +11,7 @@ export class ReservaService {
   constructor(private httpService: HttpService) {
   }
 
-  private url = 'http://localhost:8083/discoteca/reserva';
+  private url = '/discoteca/reserva';
 
   public consultarReservas(): Observable<Reserva[]> {
     return this.httpService.get<Reserva[]>(this.url);
