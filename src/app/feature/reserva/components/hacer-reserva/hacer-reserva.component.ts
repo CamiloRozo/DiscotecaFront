@@ -41,7 +41,7 @@ export class HacerReservaComponent implements OnInit {
   private ajustarFechas(): any {
     const date = new Date();
     const diaActual = date.getDay();
-    const diaFinal = 7 - diaActual;
+    const diaFinal = 6 - diaActual;
     date.setDate(date.getDate() + diaFinal);
     const datePipeEn = new DatePipe('en-US');
     return datePipeEn.transform(date, 'yyyy-MM-dd');
